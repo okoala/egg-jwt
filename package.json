@@ -1,0 +1,51 @@
+{
+  "name": "egg-jwt",
+  "version": "0.1.0",
+  "description": "JWT authentication plugin for egg",
+  "eggPlugin": {
+    "name": "jwt"
+  },
+  "keywords": [
+    "egg",
+    "plugin",
+    "jwt"
+  ],
+  "dependencies": {
+    "koa-jwt": "^1.2.0"
+  },
+  "devDependencies": {
+    "autod": "2",
+    "egg": "test",
+    "egg-bin": "1",
+    "egg-ci": "1",
+    "egg-mock": "~0.0.1",
+    "eslint": "3",
+    "eslint-config-egg": "3",
+    "should": "8",
+    "supertest": "1"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "scripts": {
+    "test": "npm run lint && npm run test-local",
+    "test-local": "egg-bin test",
+    "cov": "egg-bin cov",
+    "lint": "eslint --ext js . --fix",
+    "ci": "npm run lint && npm run cov",
+    "autod": "autod"
+  },
+  "ci": {
+    "version": "4, 6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/okoala/egg-jwt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/okoala/egg-jwt/issues"
+  },
+  "homepage": "https://github.com/okoala/egg-jwt#readme",
+  "author": "okoala <dapixp@gmail.com>",
+  "license": "MIT"
+}
