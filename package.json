@@ -15,10 +15,10 @@
   },
   "devDependencies": {
     "autod": "2",
-    "egg": "test",
+    "egg": "0.2.1",
     "egg-bin": "1",
     "egg-ci": "1",
-    "egg-mock": "~0.0.1",
+    "egg-mock": "~0.0.4",
     "eslint": "3",
     "eslint-config-egg": "3",
     "should": "8",
@@ -33,7 +33,8 @@
     "cov": "egg-bin cov",
     "lint": "eslint --ext js . --fix",
     "ci": "npm run lint && npm run cov",
-    "autod": "autod"
+    "autod": "autod",
+    "release": "bash release.sh"
   },
   "ci": {
     "version": "4, 6"
