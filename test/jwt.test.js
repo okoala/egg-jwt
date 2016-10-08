@@ -30,4 +30,16 @@ describe('failure tests', () => {
       .expect(200)
       .end(done);
   });
+
+  it('should work if authorization header is valid jwt', function(done) {
+    const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
+    request(app.callback())
+      .get('/success')
+      .set('Authorization', 'Bearer ' + token)
+      .expect(200)
+      .expect(function(res) {
+        if (!(res.body.foo === 'bar')) return 'Wrong user';
+      })
+      .end(done);
+  });
 });
