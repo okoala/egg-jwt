@@ -1,6 +1,10 @@
 'use strict';
 
+/**
+ * jwt default config
+ * @member Config#jwt
+ * @property {String} SOME_KEY - some description
+ */
 exports.jwt = {
-  // key: '',
-  secret: 'shared-secret',
+  secret: '123456',
 };
