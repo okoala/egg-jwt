@@ -119,7 +119,7 @@ curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJi
 ## How To Create A Token
 
 ```
-const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
+const token = app.jwt.sign({ foo: 'bar' }, app.config.secret);
 ```
 
 ## Questions & Suggestions
