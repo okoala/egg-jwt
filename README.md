@@ -49,7 +49,9 @@ exports.jwt = {
 
 ```js
 // {app_root}/config/config.default.js
-exports.secret = '123456'
+exports.jwt = {
+  secret: '123456'
+};
 ```
 
 see [config/config.default.js](config/config.default.js) for more detail.
@@ -119,7 +121,7 @@ curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJi
 ## How To Create A Token
 
 ```
-const token = app.jwt.sign({ foo: 'bar' }, app.config.secret);
+const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
 ```
 
 ## Questions & Suggestions
