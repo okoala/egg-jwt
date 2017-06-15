@@ -63,9 +63,11 @@ see [config/config.default.js](config/config.default.js) for more detail.
 'use strict';
 
 module.exports = app => {
-  app.get('/', app.jwt, 'render.index');
+  const jwt = app.middlewares.jwt(app.config.jwt);
+
+  app.get('/', jwt, 'render.index');
   app.get('/login', 'login.index');
-  app.get('/success', app.jwt, 'success.index');
+  app.get('/success', jwt, 'success.index');
 };
 
 // app/controller/render.js
