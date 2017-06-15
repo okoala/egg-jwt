@@ -1,8 +1,7 @@
 'use strict';
 
-const koajwt = require('koa-jwt');
-const jwt = require('jsonwebtoken');
 const JWT = Symbol('Application#jwt');
+const jwt = require('jsonwebtoken');
 
 module.exports = {
   get jwt() {
