@@ -2,6 +2,6 @@
 
 const koajwt = require('koa-jwt');
 
-module.exports = (options, app) => {
+module.exports = options => {
   return koajwt(options);
 };
