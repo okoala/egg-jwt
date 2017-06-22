@@ -51,9 +51,9 @@ exports.jwt = {
 // {app_root}/config/config.default.js
 exports.jwt = {
   secret: '123456',
-
+  
+  enable: true, // default is false
   match: '/success', // optional
-  ignore: '/login', // optional
 };
 ```
 see [egg-docs/middleware](https://github.com/eggjs/egg/blob/master/docs/source/en/basics/middleware.md#match-and-ignore) for match, ignore more detail.
@@ -68,7 +68,7 @@ see [config/config.default.js](config/config.default.js) for more detail.
 
 module.exports = app => {
   app.get('/', app.jwt, 'render.index'); // use old api app.jwt
-  app.get('/login', 'login.index'); // is setting in config.jwt.ignore
+  app.get('/login', 'login.index');
   app.get('/success', 'success.index'); // is setting in config.jwt.match
 };
 
