@@ -7,4 +7,5 @@
  */
 exports.jwt = {
   secret: '123456',
+  enable: false,
 };
