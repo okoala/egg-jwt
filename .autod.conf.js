@@ -8,13 +8,16 @@ module.exports = {
      'benchmark',
    ],
   devdep: [
+    'autod',
+    'egg',
     'egg-ci',
     'egg-bin',
-    'autod',
+    'egg-mock',
     'eslint',
-    'eslint-config-egg',
-    'supertest',
-    'should',
+    'eslint-config-egg'
+  ],
+  semver: [
+    'koa-jwt@2'
   ],
   exclude: [
     './test/fixtures',
