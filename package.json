@@ -13,7 +13,7 @@
   ],
   "dependencies": {
     "jsonwebtoken": "^8.0.0",
-    "koa-jwt": "^3.2.2"
+    "koa-jwt": "^2.2.4"
   },
   "devDependencies": {
     "autod": "^2.8.0",
