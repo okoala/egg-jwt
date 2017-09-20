@@ -12,7 +12,7 @@
     "jwt"
   ],
   "dependencies": {
-    "jsonwebtoken": "^7.4.1",
+    "jsonwebtoken": "^8.0.0",
     "koa-jwt": "^2.2.4"
   },
   "devDependencies": {
@@ -22,8 +22,8 @@
     "egg-ci": "^1.8.0",
     "egg-mock": "^3.8.0",
     "eslint": "^4.1.1",
-    "eslint-config-egg": "^4.2.1",
-    "webstorm-disable-index": "^1.1.2"
+    "eslint-config-egg": "^5.1.1",
+    "webstorm-disable-index": "^1.2.0"
   },
   "engines": {
     "node": ">=6.0.0"

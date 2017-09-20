@@ -128,6 +128,8 @@ curl -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmb28iOiJi
 const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
 ```
 
+For more options, check [here](https://github.com/auth0/node-jsonwebtoken)
+
 ## Questions & Suggestions
 
 Please open an issue [here](https://github.com/eggjs/egg/issues).
