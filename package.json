@@ -1,6 +1,6 @@
 {
   "name": "egg-jwt",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "JWT authentication plugin for egg",
   "eggPlugin": {
     "name": "jwt"
