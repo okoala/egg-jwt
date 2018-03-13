@@ -22,6 +22,10 @@
 
 Egg's JWT(JSON Web Token Authentication Plugin)
 
+## Important
+
+> egg-jwt@3 use koa-jwt2
+
 ## Install
 
 ```bash
@@ -34,14 +38,13 @@ or
 yarn add egg-jwt
 ```
 
-
 ## Usage
 
 ```js
 // {app_root}/config/plugin.js
 exports.jwt = {
   enable: true,
-  package: 'egg-jwt',
+  package: "egg-jwt"
 };
 ```
 
@@ -50,58 +53,54 @@ exports.jwt = {
 ```js
 // {app_root}/config/config.default.js
 exports.jwt = {
-  secret: '123456',
-
-  enable: true, // default is false
-  match: '/success', // optional
+  secret: "123456"
 };
 ```
-see [egg-docs/middleware](https://github.com/eggjs/egg/blob/master/docs/source/en/basics/middleware.md#match-and-ignore) for match, ignore more detail.
 
 see [config/config.default.js](config/config.default.js) for more detail.
 
 ## Example
 
-``` javascript
+```javascript
 // app/router.js
-'use strict';
+"use strict";
 
 module.exports = app => {
-  app.get('/', app.jwt, 'render.index'); // use old api app.jwt
-  app.get('/login', 'login.index');
-  app.get('/success', 'success.index'); // is setting in config.jwt.match
+  app.get("/", app.jwt, "render.index"); // use old api app.jwt
+  app.get("/login", "login.index");
+  app.get("/success", "success.index"); // is setting in config.jwt.match
 };
 
 // app/controller/render.js
-'use strict';
+("use strict");
 
 module.exports = app => {
   class RenderController extends app.Controller {
-    * index() {
-      this.ctx.body = 'hello World';
+    *index() {
+      this.ctx.body = "hello World";
     }
   }
   return RenderController;
 };
 
 // app/controller/login.js
-'use strict';
+("use strict");
 
 module.exports = app => {
   class LoginController extends app.Controller {
-    * index() {
-      this.ctx.body = 'hello admin';
+    *index() {
+      this.ctx.body = "hello admin";
     }
   }
   return LoginController;
 };
 
 // app/controller/success.js
-'use strict';
+("use strict");
 
 module.exports = app => {
   class SuccessController extends app.Controller {
-    * index() {
+    *index() {
       this.ctx.body = this.ctx.state.user;
     }
   }

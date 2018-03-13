@@ -3,12 +3,13 @@
   "version": "2.2.1",
   "description": "JWT authentication plugin for egg",
   "eggPlugin": {
-    "name": "jwt"
+    "name": "jwt",
+    "optionalDependencies": ["onerror"]
   },
   "keywords": ["egg", "eggPlugin", "egg-plugin", "jwt"],
   "dependencies": {
     "jsonwebtoken": "^8.0.0",
-    "koa-jwt": "^2.2.4"
+    "koa-jwt2": "^1.0.3"
   },
   "devDependencies": {
     "autod": "^2.8.0",

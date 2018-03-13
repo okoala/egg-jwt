@@ -13,11 +13,5 @@ module.exports = app => {
     `Duplication of middleware name found: ${MIDDLEWARE_NAME_JWT}. Rename your middleware other than "${MIDDLEWARE_NAME_JWT}" please.`
   );
 
-  const corsIndex = app.config.coreMiddleware.indexOf('cors');
-  if (corsIndex > -1) {
-    // push jwt after cors
-    app.config.coreMiddleware.splice(corsIndex + 1, 0, MIDDLEWARE_NAME_JWT);
-  } else {
-    app.config.coreMiddleware.unshift(MIDDLEWARE_NAME_JWT);
-  }
+  app.config.appMiddleware.unshift(MIDDLEWARE_NAME_JWT);
 };

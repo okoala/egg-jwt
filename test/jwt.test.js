@@ -8,53 +8,56 @@ describe('test/jwt.test.js', () => {
 
   afterEach(mm.restore);
 
-  [
-    'jwt-app.jwt',
-    'jwt-middleware',
-    'jwt-router-middleware',
-  ].forEach(name => {
-
+  // 'jwt-app.jwt', 'jwt-middleware',
+  [ 'jwt-app.jwt', 'jwt-middleware', 'jwt-router-middleware' ].forEach(name => {
     describe(name, () => {
-
-      before(() => {
+      before(async () => {
         app = mm.app({
           baseDir: `apps/${name}`,
           plugin: true,
           cache: false,
         });
-        return app.ready();
+        await app.ready();
       });
 
       after(() => app.close());
 
-      it('should throw 401 if no authorization header', function* () {
-        yield app.httpRequest()
+      it('should throw 401 if no authorization header', async () => {
+        await app
+          .httpRequest()
           .get('/')
           .expect(401);
       });
 
-      it('should success if route no use jwt', function* () {
-        yield app.httpRequest()
+      it('should success if route no use jwt', async () => {
+        await app
+          .httpRequest()
           .get('/login')
           .expect(200);
       });
 
-      it('should work if authorization header is valid jwt', function* () {
+      it('should work if authorization header is valid jwt', async () => {
         const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
-        yield app.httpRequest()
+        await app
+          .httpRequest()
           .get('/success')
           .set('Authorization', 'Bearer ' + token)
           .expect(200);
 
-        const res = yield app.httpRequest()
+        const res = await app
+          .httpRequest()
           .get('/success')
           .set('Authorization', 'Bearer ' + token);
 
         assert(res.body.foo === 'bar');
       });
 
+      it('should success if err instanceof UnauthorizedError ', async () => {
+        await app
+          .httpRequest()
+          .get('/unauthorerror')
+          .expect('UnauthorizedError');
+      });
     });
-
   });
-
 });
