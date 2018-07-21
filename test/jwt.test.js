@@ -29,6 +29,13 @@ describe('test/jwt.test.js', () => {
           .expect(401);
       });
 
+      it('should success resolve token', async () => {
+        const token = app.jwt.sign({ foo: 'bar' });
+        const payload = app.jwt.verify(token);
+
+        assert.equal(payload.foo, 'bar');
+      });
+
       it('should success if route no use jwt', async () => {
         await app
           .httpRequest()
@@ -37,7 +44,7 @@ describe('test/jwt.test.js', () => {
       });
 
       it('should work if authorization header is valid jwt', async () => {
-        const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
+        const token = app.jwt.sign({ foo: 'bar' });
         await app
           .httpRequest()
           .get('/success')
