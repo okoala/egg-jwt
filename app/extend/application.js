@@ -11,19 +11,29 @@ module.exports = {
       const config = this.config.jwt;
       this[JWT] = koajwt(config);
 
-      this[JWT].verify = (token, options) => {
-        return jwt.verify(
-          token,
-          config.secret,
-          Object.assign({}, config.verify, options)
+      this[JWT].sign = (payload, secret, options = {}) => {
+        if (typeof secret !== 'string') {
+          options = secret || {};
+          secret = config.secret;
+        }
+
+        return jwt.sign(
+          payload,
+          secret,
+          Object.assign({}, config.sign || {}, options)
         );
       };
 
-      this[JWT].sign = (payload, options) => {
-        return jwt.sign(
-          payload,
-          config.secret,
-          Object.assign({}, config.sign, options)
+      this[JWT].verify = (token, secret, options = {}) => {
+        if (typeof secret !== 'string') {
+          options = secret || {};
+          secret = config.secret;
+        }
+
+        return jwt.verify(
+          token,
+          secret,
+          Object.assign({}, config.verify || {}, options)
         );
       };
 

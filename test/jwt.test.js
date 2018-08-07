@@ -45,11 +45,17 @@ describe('test/jwt.test.js', () => {
 
       it('should work if authorization header is valid jwt', async () => {
         const token = app.jwt.sign({ foo: 'bar' });
-        await app
+
+        const res = await app
           .httpRequest()
           .get('/success')
-          .set('Authorization', 'Bearer ' + token)
-          .expect(200);
+          .set('Authorization', 'Bearer ' + token);
+
+        assert(res.body.foo === 'bar');
+      });
+
+      it('jwt.sign should support custom secret', async () => {
+        const token = app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret);
 
         const res = await app
           .httpRequest()
