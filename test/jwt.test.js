@@ -36,6 +36,13 @@ describe('test/jwt.test.js', () => {
         assert.equal(payload.foo, 'bar');
       });
 
+      it('should success sign use options.expiresIn', async () => {
+        const token = app.jwt.sign({ foo: 'bar' }, '123456', { expiresIn: 10 });
+        const payload = app.jwt.verify(token, '123456');
+
+        assert.equal(payload.foo, 'bar');
+      });
+
       it('should success if route no use jwt', async () => {
         await app
           .httpRequest()

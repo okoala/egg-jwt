@@ -8,17 +8,17 @@
   },
   "keywords": ["egg", "eggPlugin", "egg-plugin", "jwt"],
   "dependencies": {
-    "jsonwebtoken": "^8.0.0",
+    "jsonwebtoken": "^8.3.0",
     "koa-jwt2": "^1.0.3"
   },
   "devDependencies": {
-    "autod": "^2.8.0",
-    "egg": "^1.5.0",
-    "egg-bin": "^4.0.4",
+    "autod": "^3.0.1",
+    "egg": "^2.10.0",
+    "egg-bin": "^4.8.1",
     "egg-ci": "^1.8.0",
-    "egg-mock": "^3.8.0",
-    "eslint": "^4.1.1",
-    "eslint-config-egg": "^5.1.1",
+    "egg-mock": "^3.19.3",
+    "eslint": "^5.4.0",
+    "eslint-config-egg": "^7.0.0",
     "webstorm-disable-index": "^1.2.0"
   },
   "engines": {
