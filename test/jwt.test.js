@@ -72,6 +72,19 @@ describe('test/jwt.test.js', () => {
         assert(res.body.foo === 'bar');
       });
 
+      it('jwt.sign should support callback', function(done) {
+        app.jwt.sign({ foo: 'bar' }, app.config.jwt.secret, function(err, token) {
+          app
+            .httpRequest()
+            .get('/success')
+            .set('Authorization', 'Bearer ' + token)
+            .then(res => {
+              assert(res.body.foo === 'bar');
+              done();
+            });
+        });
+      });
+
       it('should success if err instanceof UnauthorizedError ', async () => {
         await app
           .httpRequest()
