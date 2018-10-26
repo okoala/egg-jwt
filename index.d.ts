@@ -27,12 +27,12 @@ declare module "egg" {
         options?: any,
         callback?: function
       ): string;
-      
+
       /**
-	     * 解码
-	     * @param token jwt token
-	     */
-	    decode(token: string): string;
+       * 解码
+       * @param token jwt token
+       */
+      decode(token: string): string;
     };
   }
 }
