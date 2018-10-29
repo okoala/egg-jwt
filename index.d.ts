@@ -2,7 +2,7 @@ declare module "egg" {
   interface Application {
     jwt: {
       /**
-       * 签名
+       * call jsonwebtoken's sign() method
        * @param payload datas. datas to be signed
        * @param secretOrPrivateKey secret key. string or { key, passphrase }
        * @param options jwt options。see more details in https://github.com/auth0/node-jsonwebtoken
@@ -15,7 +15,7 @@ declare module "egg" {
         callback?: function
       ): string;
       /**
-       * 较验
+       * call jsonwebtoken's verify() method
        * @param token jwt token. 
        * @param secretOrPrivateKey secret key。string or { key, passphrase }
        * @param options jwt options。see more details in https://github.com/auth0/node-jsonwebtoken
@@ -29,7 +29,7 @@ declare module "egg" {
       ): string;
 
       /**
-       * 解码
+       * call jsonwebtoken's decode() method
        * @param token jwt token
        */
       decode(token: string): string;
