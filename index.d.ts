@@ -1,4 +1,4 @@
-declare module "egg" {
+declare module 'egg' {
   interface Application {
     jwt: {
       /**
@@ -12,7 +12,7 @@ declare module "egg" {
         payload: any,
         secretOrPrivateKey: string,
         options?: any,
-        callback?: function
+        callback?: Function
       ): string;
       /**
        *
@@ -25,8 +25,14 @@ declare module "egg" {
         token: any,
         secretOrPrivateKey: string,
         options?: any,
-        callback?: function
+        callback?: Function
       ): string;
     };
+  }
+  interface EggAppConfig {
+    jwt: {
+      secret: string
+      enable?: boolean
+    }
   }
 }
