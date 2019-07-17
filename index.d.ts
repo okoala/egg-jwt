@@ -1,3 +1,4 @@
+import { IgnoreOrMatch } from 'egg';
 import { SignOptions, SignCallback, VerifyOptions, VerifyCallback } from 'jsonwebtoken';
 declare module 'egg' {
   interface Application {
@@ -37,6 +38,8 @@ declare module 'egg' {
       enable?: boolean;
       sign?: SignOptions;
       verify?: VerifyOptions;
+      ignore?: IgnoreOrMatch;
+      match?: IgnoreOrMatch;
     };
   }
 }
