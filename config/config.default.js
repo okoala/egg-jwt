@@ -10,9 +10,9 @@ exports.jwt = {
   enable: false,
 
   // https://github.com/auth0/node-jsonwebtoken#jwtsignpayload-secretorprivatekey-options-callback
-  sign: {
-    expiresIn: 3600,
-  },
+  // sign: {
+  //   expiresIn: 3600,
+  // },
 
   // https://github.com/auth0/node-jsonwebtoken#jwtverifytoken-secretorpublickey-options-callback
   // verify: {},
