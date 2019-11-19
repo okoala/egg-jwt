@@ -4,9 +4,16 @@
   "description": "JWT authentication plugin for egg",
   "eggPlugin": {
     "name": "jwt",
-    "optionalDependencies": ["onerror"]
+    "optionalDependencies": [
+      "onerror"
+    ]
   },
-  "keywords": ["egg", "eggPlugin", "egg-plugin", "jwt"],
+  "keywords": [
+    "egg",
+    "eggPlugin",
+    "egg-plugin",
+    "jwt"
+  ],
   "dependencies": {
     "jsonwebtoken": "^8.3.0",
     "koa-jwt2": "^1.0.3"
@@ -32,9 +39,17 @@
     "ci": "npm run lint && npm run cov",
     "autod": "autod"
   },
-  "files": ["index.js", "app.js", "agent.js", "index.d.ts", "config", "app", "lib"],
+  "files": [
+    "index.js",
+    "app.js",
+    "agent.js",
+    "index.d.ts",
+    "config",
+    "app",
+    "lib"
+  ],
   "ci": {
-    "version": "6, 7, 8"
+    "version": "8, 10, 12"
   },
   "repository": {
     "type": "git",
