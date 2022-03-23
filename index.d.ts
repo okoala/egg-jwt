@@ -29,7 +29,7 @@ declare module 'egg' {
        * call jsonwebtoken's decode() method
        * @param token jwt token
        */
-      decode(token: string): string;
+      decode(token: string): string | Buffer | object;
     };
   }
   interface EggAppConfig {
